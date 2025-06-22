@@ -22,8 +22,8 @@ export default function Navbar() {
       </ul>
 
       <div className='nav_login_cart'>
-        <Link to ='/Login'><button>Login</button></Link>
-        <Link to ='/Cart'><img src={cart_icon} alt=''/></Link>
+        <button>Login</button>
+        <img src={cart_icon} alt=''/>
         <div className='add_cart_counter'>0</div>
       </div>
 
