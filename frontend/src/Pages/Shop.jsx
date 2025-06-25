@@ -1,9 +1,11 @@
 import React from 'react'
+import Hero from '../Components/Hero/Hero'
 
 export default function Shop() {
   return (
     <div>
-      <h1>Welcome shop</h1>
+        <Hero/>
+      
     </div>
   )
 }
