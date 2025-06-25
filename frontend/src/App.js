@@ -1,8 +1,8 @@
 
 import './App.css';
-import NavBar from '../../frontend/src/Components/NavBar/NavBar';
+import NavBar from'./Components/NavBar/NavBar';
 import { BrowserRouter,Routes,Route }  from 'react-router-dom';
-import Shope from './Pages/Shope';
+import Shop from './Pages/Shop';
 import ShopeCategory from './Pages/ShopeCategory';
 import Products from './Pages/Products';
 import Cart from './Pages/Cart';
@@ -16,15 +16,17 @@ function App() {
       <BrowserRouter>
         <NavBar/>
         <Routes>
-          <Route path='/' element={<Shope/>}/>
+          <Route path='/' element={<Shop/>}/>
           <Route path='/mens' element={<ShopeCategory category="mens"/>}/>
-          <Route path='/Womens' element={<ShopeCategory category="Womens"/>}/>
-          <Route path='/Kids' element={<ShopeCategory category="Kids"/>}/>
-          <Route path ='/Product' element={<Products/>}>
-            <Route path=':productID' element={<Products/>}/>
+          <Route path ='/womens' element={<ShopeCategory category="womens"/>}/>
+          <Route path='/kids' element={<ShopeCategory category="Kids"/>}/>
+          <Route path ='/product' element={<Products/>}>
+              <Route path=':productID' element={<Products/>}/>
           </Route>
-          <Route path='/Cart' element={<Cart/>}/>
-          <Route path='/Login' element={<LoginSignup/>}/>
+          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/login' element={<LoginSignup/>}/>
+
+
         </Routes>
       </BrowserRouter>
     </div>
