@@ -9,11 +9,11 @@ export default function Hero() {
   return (
     <div className='hero'>
         <div className='hero-left'>
-            <h2>NEW ARRIVALS ONLY</h2>
-            <div>
+            <h3>NEW ARRIVALS ONLY</h3>
+            <div className='hero-left-content'>
                 <div className="hero_hand-icon">
                     <p>New</p>
-                    <img src={hand_icon} alt=''/>
+                    <img className='hand-img'src={hand_icon} alt=''/>
                 </div>
                 <p>Collection</p>
                 <p>for everyone</p>
