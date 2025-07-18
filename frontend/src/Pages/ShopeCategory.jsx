@@ -1,5 +1,5 @@
 import React from 'react';
-import './CSS/ShopeCategory.css';
+import './CSS/shopecategory.css'
 import { ShopContext } from '../Context/ShopeContext';
 import dropdown_icon from '../Components/Assest/dropdown_icon.png';
 import Item from '../Components/Item/Item';
@@ -39,6 +39,9 @@ export default function ShopeCategory(props) {
             return null;
           }
         })}
+      </div>
+      <div className="shopecategory-lodemore">
+        Explore More
       </div>
     </div>
   );
