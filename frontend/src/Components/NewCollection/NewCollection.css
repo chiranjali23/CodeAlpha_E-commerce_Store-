@@ -30,13 +30,32 @@
   
   .new-collection-item {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 items per row */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto; /* Center the grid */
+    margin: 0 auto; 
     box-sizing: border-box;
     padding: 0 20px;
-    justify-items: center; /* Center items horizontally */
+    justify-items: center; 
+    cursor: pointer;
+
   }
+
+  .new-collection-item :hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-in-out;
+  }
+
+    .new-collection-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover; /* Maintain aspect ratio */
+    }
+
+    
+
+  
   

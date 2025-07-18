@@ -7,6 +7,10 @@ import ShopeCategory from './Pages/ShopeCategory';
 import Products from './Pages/Products';
 import Cart from './Pages/Cart';
 import LoginSignup from './Pages/LoginSignup';
+import Footer from './Components/Footer/Footer';
+import men_banner from '../src/Components/Assest/banner_mens.png';
+import women_banner from '../src/Components/Assest/banner_women.png';
+import kids_banner from '../src/Components/Assest/banner_kids.png'
 
 
 
@@ -17,9 +21,9 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path='/' element={<Shop/>}/>
-          <Route path='/mens' element={<ShopeCategory category="mens"/>}/>
-          <Route path ='/womens' element={<ShopeCategory category="womens"/>}/>
-          <Route path='/kids' element={<ShopeCategory category="Kids"/>}/>
+          <Route path='/mens' element={<ShopeCategory banner ={men_banner} category="Mens"/>}/>
+          <Route path ='/womens' element={<ShopeCategory banner ={women_banner} category="womens"/>}/>
+          <Route path='/kids' element={<ShopeCategory banner ={kids_banner} category="Kids"/>}/>
           <Route path ='/product' element={<Products/>}>
               <Route path=':productID' element={<Products/>}/>
           </Route>
@@ -28,6 +32,7 @@ function App() {
 
 
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
