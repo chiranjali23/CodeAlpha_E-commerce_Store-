@@ -6,7 +6,7 @@ export default function Item(props) {
   return (
     <div className='item'>
       <Link to={`/product/${props.id}`}>
-        <img src={props.image} alt='' />
+        <img onclick={window.scrollTo(0,0)} src={props.image} alt='' />
       </Link>
       <p className='description'>{props.name}</p>
       <div className="item-prices">
