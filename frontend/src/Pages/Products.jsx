@@ -20,6 +20,7 @@ export default function Products() {
       <ProductDisplay product={product} />
       <DiscriptionBox />
       <RelatedProduct />
+     
     </div>
   );
 }

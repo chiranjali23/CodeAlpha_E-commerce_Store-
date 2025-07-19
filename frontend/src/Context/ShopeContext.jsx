@@ -3,11 +3,11 @@ import all_product from '../Components/Assest/all_product';
 
 export const ShopContext = createContext(null);
 
-// Helper function to initialize cart
+
 const getDefaultCart = () => {
   let cart = {};
   for (let index = 0; index < all_product.length; index++) {
-    cart[all_product[index].id] = 0; // Use product IDs as keys
+    cart[all_product[index].id] = 0;
   }
   return cart;
 };
@@ -15,19 +15,49 @@ const getDefaultCart = () => {
 const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
-  // Add to cart
+
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-    console.log(cartItems);
   };
 
-  // Remove from cart
   const removeFromCart = (itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: Math.max(prev[itemId] - 1, 0) }));
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: Math.max(prev[itemId] - 1, 0),
+    }));
   };
 
-  // Provide value to context
+  
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        const itemInfo = all_product.find(
+          (product) => product.id === Number(item)
+        );
+        if (itemInfo) {
+          totalAmount += itemInfo.new_price * cartItems[item];
+        }
+      }
+    }
+    return totalAmount.toFixed(2); 
+  };
+
+  
+  const getTotalCartItems = () => {
+    let totalItem = 0;
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        totalItem += cartItems[item];
+      }
+    }
+    return totalItem;
+  };
+
+  
   const contextValue = {
+    getTotalCartAmount,
+    getTotalCartItems,
     all_product,
     cartItems,
     addToCart,
